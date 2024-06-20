@@ -21,6 +21,16 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/api/v3/*
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
 #      to see info coming back and forth
 #      httpserver:
 #        wiretap: true
