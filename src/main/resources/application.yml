@@ -10,17 +10,17 @@ spring:
         - id: spring-6-rest-mvc
           uri: http://localhost:8081
           predicates:
-            - Path=/api/v1/*
+            - Path=/api/v1/*/**
 
         - id: spring-r2dbc
           uri: http://localhost:8082
           predicates:
-            - Path=/api/v2/*
+            - Path=/api/v2/*/**
 
         - id: spring-reactiveMongo
           uri: http://localhost:8083
           predicates:
-            - Path=/api/v3/*
+            - Path=/api/v3/*/**
 management:
   endpoint:
     health:
@@ -32,13 +32,13 @@ management:
     livenessstate:
       enabled: true
 #      to see info coming back and forth
-#      httpserver:
-#        wiretap: true
-#      httpclient:
-#        wiretap: true
-#logging:
-#  level:
-#    root: error
-#    reactor.netty: trace
-#    org.springframework.cloud.gateway: trace
-#    org.springframework.http.server.reactive: trace
+      httpserver:
+        wiretap: true
+      httpclient:
+        wiretap: true
+logging:
+  level:
+    root: error
+    reactor.netty: trace
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: trace
